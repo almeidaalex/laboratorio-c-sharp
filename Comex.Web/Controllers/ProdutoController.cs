@@ -38,6 +38,28 @@ namespace Comex.Web.Controllers
                 return NotFound();
             return Ok(produto);
         }
+
+        [HttpPut("{id}")]
+        public IActionResult AtualizarProduto([FromBody] CriarProdutoDto atualizarProduto, int id)
+        {
+            var produto = _produtos.FirstOrDefault(p => p.Id == id);
+            if (produto.IsNull())
+                return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                produto.Nome = atualizarProduto.Nome;
+                produto.PrecoUnitario = atualizarProduto.PrecoUnitario;
+                produto.QuantidadeEmEstoque = atualizarProduto.QuantidadeEmEstoque;
+                produto.Categoria = atualizarProduto.Categoria;
+            }
+            else
+            {
+                return BadRequest(atualizarProduto);
+            }
+
+            return Ok(produto);
+        }
     }
 }
 
