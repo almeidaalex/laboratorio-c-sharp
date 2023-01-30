@@ -23,7 +23,8 @@ namespace Comex.Web.Controllers
             if (ModelState.IsValid)
             {
                 _produtos.Add(new Produto(produto.Nome, produto.PrecoUnitario, produto.QuantidadeEmEstoque, produto.Categoria));
-                return Ok(_produtos.Last());
+                var created = _produtos.Last();
+                return CreatedAtAction(nameof(ObterProdutoPorId), new {Id = created.Id }, created);
             }
             else
                 return BadRequest(produto);
