@@ -60,6 +60,18 @@ namespace Comex.Web.Controllers
 
             return Ok(produto);
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult RemoverProduto(int id)
+        {
+            var produto = _produtos.FirstOrDefault(p => p.Id == id);
+            if (produto.IsNull())
+                return NotFound();
+
+            _produtos.Remove(produto);
+
+            return NoContent();
+        }
     }
 }
 
