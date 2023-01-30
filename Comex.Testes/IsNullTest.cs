@@ -1,4 +1,4 @@
-using Comex.Models.Exceptions;
+using Comex.Models.Extensoes;
 
 using Xunit;
 

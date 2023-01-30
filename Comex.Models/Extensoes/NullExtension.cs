@@ -1,4 +1,4 @@
-namespace Comex.Models.Exceptions
+namespace Comex.Models.Extensoes
 {
     public static class NullExtension
     {

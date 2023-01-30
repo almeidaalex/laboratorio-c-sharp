@@ -17,7 +17,7 @@ namespace Comex.Models
         public string Categoria { get; set; }
         protected string Atributos { get; set; }
 
-        public Produto(string nome, double precoUnitario, int quantidadeEmEstoque, string categoria)
+        public Produto(string nome, decimal precoUnitario, int quantidadeEmEstoque, string categoria)
         {
             Id = ++_id;
             validaEntradaDeDados(nome, precoUnitario, quantidadeEmEstoque, categoria);
@@ -38,7 +38,7 @@ namespace Comex.Models
             return PrecoUnitario * 0.40m;
         }
 
-        public void validaEntradaDeDados(string nome, double precoUnitario, int quantidadeEmEstoque, string categoria)
+        public void validaEntradaDeDados(string nome, decimal precoUnitario, int quantidadeEmEstoque, string categoria)
         {
             if (nome.Length < 5)
             {

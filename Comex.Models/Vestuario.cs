@@ -6,7 +6,7 @@ namespace Comex.Models
 {
     public class Vestuario : Produto
     {
-        public Vestuario(string nome, double precoUnitario, int quantidadeEmEstoque, string categoria, string atributos)
+        public Vestuario(string nome, decimal precoUnitario, int quantidadeEmEstoque, string categoria, string atributos)
             :base(nome, precoUnitario, quantidadeEmEstoque, categoria)
         {
 
