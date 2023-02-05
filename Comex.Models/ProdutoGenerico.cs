@@ -1,7 +1,7 @@
 ﻿using System.Numerics;
 
-namespace Comex.Models
-{
+namespace Comex.Models;
+
 
     /// <summary>
     ///
@@ -49,7 +49,7 @@ namespace Comex.Models
             {
                 throw new ArgumentException("O preço unitário deve ser maior que 0", nameof(precoUnitario));
             }
-            if (Convert.ToDecimal(quantidadeEmEstoque) < 0)
+            if (quantidadeEmEstoque < T.Zero)
             {
                 throw new ArgumentException("A quantidade em estoque deve ser maior que 0", nameof(quantidadeEmEstoque));
             }
@@ -65,4 +65,4 @@ namespace Comex.Models
             Categoria = categoria;
         }
     }
-}
+
