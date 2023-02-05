@@ -1,0 +1,31 @@
+@host = http://localhost:5235
+
+POST {{host}}/produto
+Content-Type: application/json
+
+{
+    "nome": "meu produto",
+    "precoUnitario": 10,
+    "categoria": "roupa",
+    "quantidadeEmEstoque": 20
+}
+
+###
+GET {{host}}/produto
+Content-Type: application/json
+
+###
+PUT {{host}}/produto/1
+Content-Type: application/json
+
+{
+    "nome": "meu produto",
+    "precoUnitario": 13,
+    "categoria": "roupa",
+    "quantidadeEmEstoque": 20
+}
+
+###
+DELETE {{host}}/produto/1
+Content-Type: application/json
+
